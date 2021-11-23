@@ -70,4 +70,6 @@ gem 'jquery-rails'
 
 gem 'bcrypt'
 
+gem 'carrierwave'
+
 
