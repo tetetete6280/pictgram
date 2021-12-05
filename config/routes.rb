@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'tags/new'
   get 'tags/index'
   get 'topics/new'
+  
   get 'sessions/new'
 
   root 'pages#index'
