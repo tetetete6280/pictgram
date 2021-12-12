@@ -8,23 +8,21 @@
               <%= topic.user.name %>
             </h2>
             <%= image_tag topic.image.url %>
-            
             <!--ここからいいね条件-->
             <% if !topic.favorite_users.include?(current_user) %>
-              <!--いいねされていない-->
+            <!--いいねされていない-->
               <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
                 <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
               <% end %>
             <% else %>
-              <!--いいねされている-->
+            <!--いいねされている-->
               <%= link_to favorites_path(topic_id: topic.id), method: :delete do  %>
                 <%= image_tag 'icons/heart-pink.png', class: 'topic-index-icon' %>
-                <%= #f.hidden_field :topic_id, value: topic.id %>
-                <% #f.submit :class=>"topic-index-icon heart-pink" %>
-              <% end %>             
+                <%#=f.hidden_field :topic_id, value: topic.id %>
+                <%#f.submit :class=>"topic-index-icon heart-pink" %>
+              <% end %>
             <% end %>
-            <%= topic.favorites.count %>          
-             <!--ここまで-->           
+            <%= topic.favorites.count %>
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
             <p class="topic-text">
               <%= topic.description %>
